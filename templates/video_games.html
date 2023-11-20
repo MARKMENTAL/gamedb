@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Games</title>
+    <style>
+        img {
+            max-width: 200px; /* You can adjust this as needed */
+            height: auto;
+        }
+        .stars {
+            color: gold; /* For the star color */
+            font-size: 1.2em; /* Adjust size as needed */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Games</h1>
+    <ul>
+        {{range .}}
+        <li>
+            <h2>{{.Title}} (Rating out of 10: {{.Rating}})</h2>
+            <div class="stars">{{.StarRating}}</div>
+            <img src="{{.BoxArtURL}}" alt="Cover image of {{.Title}}">
+            <p>Genre: {{.Genre}}</p>
+            <p>Release Date: {{.ReleaseDate}}</p>
+            <p>Developer: {{.Developer}}</p>
+            <p>Publisher: {{.Publisher}}</p>
+            <p>Console/Platform: {{.Platform}}</p>
+            <!-- Add more fields as needed -->
+        </li>
+        {{else}}
+        <li>No games found.</li>
+        {{end}}
+    </ul>
+</body>
+</html>
